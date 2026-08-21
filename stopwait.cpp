@@ -13,19 +13,21 @@ int main()
     for(int i = 1; i <= n; i++)
     {
         cout << "\nSender: Sending Frame " << i;
-        this_thread::sleep_for(chrono::milliseconds(100));
+
+        cout << "\nTimer started...";
+
+        this_thread::sleep_for(chrono::seconds(1));
 
         cout << "\nReceiver: Frame " << i << " received";
-        this_thread::sleep_for(chrono::milliseconds(100));
-
         cout << "\nReceiver: Sending ACK " << i;
-        this_thread::sleep_for(chrono::milliseconds(100));
 
         cout << "\nSender: ACK " << i << " received";
-        this_thread::sleep_for(chrono::milliseconds(100));
+        cout << "\nTimer stopped.";
+
+        cout << "\n";
     }
 
-    cout << "\n\nAll frames transmitted successfully.";
+    cout << "\nAll frames transmitted successfully.";
 
     return 0;
 }
